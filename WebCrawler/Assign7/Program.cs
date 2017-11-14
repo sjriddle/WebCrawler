@@ -1,0 +1,29 @@
+﻿/**
+ * Created by Dan McDonald
+ * Utah Valley University (UVU)
+ * Assignment 7 - INFO 2200
+ * July 15, 2013
+ * 
+ */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Assign7
+{
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new SpiderForm());
+        }
+    }
+}
