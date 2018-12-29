@@ -1,10 +1,3 @@
-﻿/**
- * Created by Dan McDonald
- * Utah Valley University (UVU)
- * Assignment 7 - INFO 2200
- * July 15, 2013
- * 
- */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,8 +36,7 @@ namespace Assign7
             SpiderDialog spiderDialog = new SpiderDialog();
             spiderDialog.ShowDialog();
 
-            if (spiderDialog.DialogResult == DialogResult.OK)
-            {
+            if (spiderDialog.DialogResult == DialogResult.OK) {
                 spidie = new Spider(spiderDialog.SpiderName, spiderDialog.StartUrl, spiderDialog.Depth, spiderDialog.SearchType);
                 SpiderMessenger sm = spidie.CreateSpiderMessenger();
                 tscbSpiderForm.Items.Add(spidie);
@@ -206,8 +198,7 @@ namespace Assign7
         private void cbSpiders_SelectedIndexChanged(object sender, EventArgs e)
         {
             Spider spider = (Spider)tscbSpiderForm.SelectedItem;
-            if (spider != null)
-            {
+            if (spider != null) {
                 SelectSpiderToView(spider);
             }
         }
