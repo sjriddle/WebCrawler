@@ -1,14 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/// <summary>
-/// Samuel Riddle
-/// INFO 2200
-/// Assignment 7
-/// 11/7/2017
-/// </summary>
+
 namespace Assign7
 {
     public class UriStack
@@ -32,15 +27,11 @@ namespace Assign7
         public UriPath Pop()
         {
             // If Stack is not empy, pop
-            if (!IsEmpty())
-            {
+            if (!IsEmpty()) {
                 UriPath p1 = stack[0];
                 stack.RemoveAt(0);
                 return p1;
-            }
-            // If we can't pop, return null
-            else
-            {
+            } else {
                 return null;
             }
         }
