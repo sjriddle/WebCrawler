@@ -69,24 +69,18 @@ namespace Assign7
         /// <param name="e"></param>
         private void btnOkay_Click(object sender, EventArgs e)
         {
-            try
-            {
+            try {
                 Depth = int.Parse(tbDepth.Text);
                 StartUrl = tbUrl.Text;
                 SpiderName = tbName.Text;
-                if (rbQueue.Checked)
-                {
+                if (rbQueue.Checked) {
                     SearchType = Spider.BFS;
-                }
-                else
-                {
+                } else {
                     SearchType = Spider.DFS;
                 }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -119,12 +113,9 @@ namespace Assign7
         /// <param name="e"></param>
         private void tbDepth_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
+            try {
                 tbarSearchDepth.Value = int.Parse(tbDepth.Text);
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.ToString());
             }
         }
