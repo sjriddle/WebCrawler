@@ -1,4 +1,4 @@
-﻿namespace Assign7
+namespace Assign7
 {
     partial class SpiderAbout
     {
@@ -12,8 +12,7 @@
         /// </summary>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -170,7 +169,6 @@
             this.ResumeLayout(false);
 
         }
-
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
