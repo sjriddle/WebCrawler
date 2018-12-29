@@ -1,15 +1,10 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/// <summary>
-/// Samuel Riddle
-/// INFO 2200
-/// Assignment 7
-/// 11/7/2017
-/// </summary>
+
 namespace Assign7
 {
     public class UriQueue
@@ -33,15 +28,11 @@ namespace Assign7
         public UriPath Remove()
         {
             // If queue is not empy, remove
-            if (!IsEmpty())
-            {
+            if (!IsEmpty()) {
                 UriPath p2 = queue[0];
                 queue.RemoveAt(0);
                 return p2;
-            }
-            // If we can't removre, return null
-            else
-            {
+            } else {
                 return null;
             }
         }
