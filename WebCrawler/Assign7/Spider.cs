@@ -57,24 +57,17 @@ namespace Assign7
         public void RunSpider()
         {
             nextUrl = "";
-            if (!StorageEmpty(stack, q) && !StopMe)
-            {
+            if (!StorageEmpty(stack, q) && !StopMe) {
                 path = GetPage();
-                if (path == null)
-                {
+                if (path == null) {
                     Complete = true;
-                }
-                else
-                {
+                } else {
                     Uri next = path.GetLast();
                     Message();
                     nextUrl = next.ToString();
-                    try
-                    {
+                    try {
                         webBrowser.Url = next;
-                    }
-                    catch (Exception e)
-                    {
+                    } catch (Exception e) {
                         Console.WriteLine(e.ToString());
                     }
                 }
@@ -89,16 +82,11 @@ namespace Assign7
         /// <returns></returns>
         public Boolean StorageEmpty(UriStack stack, UriQueue q)
         {
-            if (SpiderType == DFS)
-            {
+            if (SpiderType == DFS) {
                 return stack.IsEmpty();
-            }
-            else if (SpiderType == BFS)
-            {
+            } else if (SpiderType == BFS) {
                 return q.IsEmpty();
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
@@ -108,12 +96,9 @@ namespace Assign7
         /// </summary>
         private void Message()
         {
-            if (SpiderType == DFS)
-            {
+            if (SpiderType == DFS) {
                 this.Log("Current depth: " + path.Count() + "\tURLs visited: " + visited + "\tSize of URL storage: " + stack.Count() + "\n");
-            }
-            else if (SpiderType == BFS)
-            {
+            } else if (SpiderType == BFS) {
                 this.Log("Current depth: " + path.Count() + "\tURLs visited: " + visited + "\tSize of URL storage: " + q.Count() + "\n");
             }
         }
@@ -124,12 +109,9 @@ namespace Assign7
         /// <param name="ul"></param>
         public void AddPage(UriPath ul)
         {
-            if (SpiderType == DFS)
-            {
+            if (SpiderType == DFS) {
                 stack.Push(ul);
-            }
-            else if (SpiderType == BFS)
-            {
+            } else if (SpiderType == BFS) {
                 q.Insert(ul);
             }
         }
@@ -140,12 +122,9 @@ namespace Assign7
         /// <returns></returns>
         public UriPath GetPage()
         {
-            if (SpiderType == DFS)
-            {
+            if (SpiderType == DFS) {
                 return stack.Pop();
-            }
-            else
-            {
+            } else {
                 return q.Remove();
             }
         }
@@ -162,40 +141,30 @@ namespace Assign7
             String linkText;
             HtmlDocument document = webBrowser.Document;
             HtmlElementCollection linkCollection = document.Links;
-            foreach (HtmlElement link in linkCollection)
-            {
-                if (StopMe)
-                {
+            foreach (HtmlElement link in linkCollection) {
+                if (StopMe) {
                     Complete = true;
                     break;
                 }
                 linkText = link.GetAttribute("href");
-                if (linkText.EndsWith("html") || linkText.EndsWith("php") || linkText.EndsWith("htm") || linkText.EndsWith("jsp") || linkText.EndsWith("asp") || linkText.EndsWith("/") || linkText.EndsWith("com") || linkText.EndsWith("net") || linkText.EndsWith("org") || linkText.EndsWith("us") || linkText.EndsWith("uk"))
-                {
-                    if (!linkText.StartsWith("mailto"))
-                    {
-                        if (path.Count() < MaxDepth)
-                        {
-                            try
-                            {
+                if (linkText.EndsWith("html") || linkText.EndsWith("php") || linkText.EndsWith("htm") || linkText.EndsWith("jsp") || linkText.EndsWith("asp") || linkText.EndsWith("/") || linkText.EndsWith("com") || linkText.EndsWith("net") || linkText.EndsWith("org") || linkText.EndsWith("us") || linkText.EndsWith("uk")) {
+                    if (!linkText.StartsWith("mailto")) {
+                        if (path.Count() < MaxDepth) {
+                            try {
                                 Uri url = new Uri(linkText);
-                                if (!path.Contains(url))
-                                {
+                                if (!path.Contains(url)) {
                                     UriPath newPath = path.Copy();
                                     newPath.Add(url);
                                     AddPage(newPath);
                                 }
-                            }
-                            catch (Exception except)
-                            {
+                            } catch (Exception except) {
                                 Console.WriteLine(except.ToString());
                             }
                         }
                     }
                 }
             }
-            if (!Complete)
-            {
+            if (!Complete) {
                 RunSpider();
             }
         }
@@ -270,8 +239,7 @@ namespace Assign7
         /// <param name="message"></param>
         private void Log(String message)
         {
-            for (int i = 0; i < messengers.Count; i++)
-            {
+            for (int i = 0; i < messengers.Count; i++) {
                 messengers[i].Log(message);
             }
         }
@@ -313,12 +281,9 @@ namespace Assign7
         /// <returns></returns>
         public string GetStatus()
         {
-            if (Complete)
-            {
+            if (Complete) {
                 return "inactive";
-            }
-            else
-            {
+            } else {
                 return "active";
             }
         }
