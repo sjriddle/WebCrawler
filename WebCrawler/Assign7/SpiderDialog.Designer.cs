@@ -43,41 +43,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbarSearchDepth)).BeginInit();
             this.gbDepth.SuspendLayout();
             this.SuspendLayout();
-            // 
+            
             // lbSpiderName
-            // 
             this.lbSpiderName.Font = new System.Drawing.Font("Moire", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSpiderName.Location = new System.Drawing.Point(12, 11);
             this.lbSpiderName.Name = "lbSpiderName";
             this.lbSpiderName.Size = new System.Drawing.Size(123, 21);
             this.lbSpiderName.TabIndex = 0;
             this.lbSpiderName.Text = "Spider Name:";
-            // 
+            
             // lbStartingUrl
-            // 
             this.lbStartingUrl.Font = new System.Drawing.Font("Moire", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStartingUrl.Location = new System.Drawing.Point(12, 41);
             this.lbStartingUrl.Name = "lbStartingUrl";
             this.lbStartingUrl.Size = new System.Drawing.Size(123, 20);
             this.lbStartingUrl.TabIndex = 1;
             this.lbStartingUrl.Text = "Starting URL:";
-            // 
+            
             // tbName
-            // 
             this.tbName.Location = new System.Drawing.Point(141, 12);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(169, 20);
             this.tbName.TabIndex = 0;
-            // 
+            
             // tbUrl
-            // 
             this.tbUrl.Location = new System.Drawing.Point(141, 41);
             this.tbUrl.Name = "tbUrl";
             this.tbUrl.Size = new System.Drawing.Size(169, 20);
             this.tbUrl.TabIndex = 1;
-            // 
+            
             // gbDataStructure
-            // 
             this.gbDataStructure.Controls.Add(this.rbQueue);
             this.gbDataStructure.Controls.Add(this.rbStack);
             this.gbDataStructure.Location = new System.Drawing.Point(15, 78);
@@ -86,9 +81,8 @@
             this.gbDataStructure.TabIndex = 2;
             this.gbDataStructure.TabStop = false;
             this.gbDataStructure.Text = "Select Data Structure for Search";
-            // 
+            
             // rbQueue
-            // 
             this.rbQueue.AutoSize = true;
             this.rbQueue.Location = new System.Drawing.Point(159, 37);
             this.rbQueue.Name = "rbQueue";
@@ -96,9 +90,8 @@
             this.rbQueue.TabIndex = 1;
             this.rbQueue.Text = "Queue Breadth-First";
             this.rbQueue.UseVisualStyleBackColor = true;
-            // 
+            
             // rbStack
-            // 
             this.rbStack.AutoSize = true;
             this.rbStack.Checked = true;
             this.rbStack.Location = new System.Drawing.Point(15, 37);
@@ -108,9 +101,8 @@
             this.rbStack.TabStop = true;
             this.rbStack.Text = "Stack - Depth-First";
             this.rbStack.UseVisualStyleBackColor = true;
-            // 
+            
             // tbarSearchDepth
-            // 
             this.tbarSearchDepth.Location = new System.Drawing.Point(91, 34);
             this.tbarSearchDepth.Maximum = 40;
             this.tbarSearchDepth.Name = "tbarSearchDepth";
@@ -118,9 +110,8 @@
             this.tbarSearchDepth.TabIndex = 1;
             this.tbarSearchDepth.Value = 10;
             this.tbarSearchDepth.Scroll += new System.EventHandler(this.tbSearchDepth_Scroll);
-            // 
+            
             // gbDepth
-            // 
             this.gbDepth.Controls.Add(this.tbDepth);
             this.gbDepth.Controls.Add(this.tbarSearchDepth);
             this.gbDepth.Location = new System.Drawing.Point(15, 171);
@@ -129,9 +120,8 @@
             this.gbDepth.TabIndex = 3;
             this.gbDepth.TabStop = false;
             this.gbDepth.Text = "Set Search Depth";
-            // 
+            
             // tbDepth
-            // 
             this.tbDepth.Font = new System.Drawing.Font("Moire", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDepth.Location = new System.Drawing.Point(15, 34);
             this.tbDepth.Name = "tbDepth";
@@ -139,9 +129,8 @@
             this.tbDepth.TabIndex = 0;
             this.tbDepth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbDepth.TextChanged += new System.EventHandler(this.tbDepth_TextChanged);
-            // 
+            
             // btnCancel
-            // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(155, 269);
             this.btnCancel.Name = "btnCancel";
@@ -150,9 +139,8 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
+            
             // btnOkay
-            // 
             this.btnOkay.Location = new System.Drawing.Point(236, 269);
             this.btnOkay.Name = "btnOkay";
             this.btnOkay.Size = new System.Drawing.Size(75, 23);
@@ -160,9 +148,8 @@
             this.btnOkay.Text = "OK";
             this.btnOkay.UseVisualStyleBackColor = true;
             this.btnOkay.Click += new System.EventHandler(this.btnOkay_Click);
-            // 
+            
             // SpiderDialog
-            // 
             this.AcceptButton = this.btnOkay;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
