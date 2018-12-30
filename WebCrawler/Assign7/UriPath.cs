@@ -1,10 +1,3 @@
-﻿/**
- * Created by Dan McDonald
- * Utah Valley University (UVU)
- * Assignment 7 - INFO 2200
- * July 15, 2013
- * 
- */
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,8 +71,7 @@ namespace Assign7
         public UriPath Copy()
         {
             UriPath cl = new UriPath();
-            foreach (Uri u in linkedList)
-            {
+            foreach (Uri u in linkedList) {
                 cl.linkedList.AddLast(u);
             }            
             return cl;
