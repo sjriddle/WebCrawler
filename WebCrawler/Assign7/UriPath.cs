@@ -86,6 +86,5 @@ namespace Assign7
         {
             return linkedList.Contains(uri);
         }
-
     }
 }
