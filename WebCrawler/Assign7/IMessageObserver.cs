@@ -9,7 +9,7 @@ namespace Assign7
     public interface IMessageObserver
     {
         /// <summary>
-        /// Log a message to the MessageDisplayer
+        /// Log to the MessageDisplayer
         /// </summary>
         /// <param name="message"></param>
         void Log(String message);
