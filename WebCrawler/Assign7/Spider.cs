@@ -34,8 +34,7 @@ namespace Assign7
         /// <param name="starturl"></param>
         /// <param name="depth"></param>
         /// <param name="spidertype"></param>
-        public Spider(string spidername, string starturl, int depth, string spidertype)
-        {
+        public Spider(string spidername, string starturl, int depth, string spidertype) {
             _spiderName = spidername;
             _spiderType = spidertype;
             _startUrl = starturl;
@@ -54,8 +53,7 @@ namespace Assign7
         /// <summary>
         /// Starts the processing of the spider.
         /// </summary>
-        public void RunSpider()
-        {
+        public void RunSpider() {
             nextUrl = "";
             if (!StorageEmpty(stack, q) && !StopMe) {
                 path = GetPage();
@@ -80,8 +78,7 @@ namespace Assign7
         /// <param name="stack"></param>
         /// <param name="q"></param>
         /// <returns></returns>
-        public Boolean StorageEmpty(UriStack stack, UriQueue q)
-        {
+        public Boolean StorageEmpty(UriStack stack, UriQueue q) {
             if (SpiderType == DFS) {
                 return stack.IsEmpty();
             } else if (SpiderType == BFS) {
@@ -94,8 +91,7 @@ namespace Assign7
         /// <summary>
         /// Method that updates the GUI via the MesssageDisplayer interface.
         /// </summary>
-        private void Message()
-        {
+        private void Message() {
             if (SpiderType == DFS) {
                 this.Log("Current depth: " + path.Count() + "\tURLs visited: " + visited + "\tSize of URL storage: " + stack.Count() + "\n");
             } else if (SpiderType == BFS) {
@@ -107,8 +103,7 @@ namespace Assign7
         /// Adds a page to the Uri storage.
         /// </summary>
         /// <param name="ul"></param>
-        public void AddPage(UriPath ul)
-        {
+        public void AddPage(UriPath ul) {
             if (SpiderType == DFS) {
                 stack.Push(ul);
             } else if (SpiderType == BFS) {
@@ -120,8 +115,7 @@ namespace Assign7
         /// Gets the next page from the Uri storage
         /// </summary>
         /// <returns></returns>
-        public UriPath GetPage()
-        {
+        public UriPath GetPage() {
             if (SpiderType == DFS) {
                 return stack.Pop();
             } else {
@@ -135,8 +129,7 @@ namespace Assign7
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GetHyperlinks(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
+        private void GetHyperlinks(object sender, WebBrowserDocumentCompletedEventArgs e) {
             visited++;
             String linkText;
             HtmlDocument document = webBrowser.Document;
@@ -172,8 +165,7 @@ namespace Assign7
         /// <summary>
         /// Returns the name of the Spider, used as the name for the tab on the GUI
         /// </summary>
-        public String SpiderName
-        {
+        public String SpiderName {
             get { return _spiderName; }
             set { _spiderName = value; }
         }
@@ -181,8 +173,7 @@ namespace Assign7
         /// <summary>
         /// Returns the maximum requested depth
         /// </summary>
-        public int MaxDepth
-        {
+        public int MaxDepth {
             get { return _maxDepth; }
             set { _maxDepth = value; }
         }
@@ -190,8 +181,7 @@ namespace Assign7
         /// <summary>
         /// Returns whether the the spider should be stopped.
         /// </summary>
-        public Boolean StopMe
-        {
+        public Boolean StopMe {
             get { return _stopMe; }
             set { _stopMe = value; }
         }
@@ -199,8 +189,7 @@ namespace Assign7
         /// <summary>
         /// Returns whether the Spider is complete.
         /// </summary>
-        public Boolean Complete
-        {
+        public Boolean Complete {
             get { return _complete; }
             set { _complete = value; }
         }
@@ -208,8 +197,7 @@ namespace Assign7
         /// <summary>
         /// Returns the search strategy of the spider.
         /// </summary>
-        public String SpiderType
-        {
+        public String SpiderType {
             get { return _spiderType; }
             set { _spiderType = value; }
         }
@@ -217,8 +205,7 @@ namespace Assign7
         /// <summary>
         /// Returns the start Url string.
         /// </summary>
-        public String StartUrl
-        {
+        public String StartUrl {
             get { return _startUrl; }
             set { _startUrl = value; }
         }
@@ -227,8 +214,7 @@ namespace Assign7
         /// <summary>
         /// Abort this spider following the current page parse
         /// </summary>
-        public void Abort()
-        {
+        public void Abort() {
             StopMe = true;
             Complete = true;
         }
@@ -237,8 +223,7 @@ namespace Assign7
         /// Relays log messages to those registered MessageDisplayers.
         /// </summary>
         /// <param name="message"></param>
-        private void Log(String message)
-        {
+        private void Log(String message) {
             for (int i = 0; i < messengers.Count; i++) {
                 messengers[i].Log(message);
             }
@@ -249,8 +234,7 @@ namespace Assign7
         /// Add messengers to be reported
         /// </summary>
         /// <param name="sm"></param>
-        public SpiderMessenger CreateSpiderMessenger()
-        {
+        public SpiderMessenger CreateSpiderMessenger() {
             SpiderMessenger sm = new SpiderMessenger();
             messengers.Add(sm);
             sm.Log("Starting spider...\n");
@@ -261,8 +245,7 @@ namespace Assign7
         /// Remove the SpiderMessenger
         /// </summary>
         /// <param name="sm"></param>
-        public void RemoveSpiderMessenger(SpiderMessenger sm)
-        {
+        public void RemoveSpiderMessenger(SpiderMessenger sm) {
             messengers.Remove(sm);
         }
 
@@ -270,8 +253,7 @@ namespace Assign7
         /// Return whether the spider is active.
         /// </summary>
         /// <returns></returns>
-        public Boolean IsActive()
-        {
+        public Boolean IsActive() {
             return !Complete;
         }
 
@@ -279,8 +261,7 @@ namespace Assign7
         /// Returns the status
         /// </summary>
         /// <returns></returns>
-        public string GetStatus()
-        {
+        public string GetStatus() {
             if (Complete) {
                 return "inactive";
             } else {
@@ -292,8 +273,7 @@ namespace Assign7
         /// Overrides teh ToString method.
         /// </summary>
         /// <returns></returns>
-        public override String ToString()
-        {
+        public override String ToString() {
             return SpiderName;
         }
     }
